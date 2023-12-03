@@ -4,11 +4,11 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>Secret Santa Pairing</title>
+        <title>Amigo secreto!</title>
 
         <script src="vendors/Lodash-3.10.1.js"></script>
         <script src="vendors/Cryptojs.aes-3.1.2.js"></script>
-
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Maitree:wght@300;400&family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
         <style>
 
             * {
@@ -25,15 +25,11 @@
             }
 
             body {
-                background: url(./assets/snow.png), url(./assets/santa.png), url(./assets/snow.png), radial-gradient(#FB3B3B, #EF3D3D);
-                background-repeat: repeat, no-repeat, repeat, no-repeat;
+                background: url(./assets/santa-50perc.png), radial-gradient(#ec5e5e, #ca2323);
+                background-repeat: no-repeat, no-repeat;
+                background-position: bottom right;
 
-                animation-name: snow;
-                animation-duration: 5s;
-                animation-iteration-count: infinite;
-                animation-timing-function: linear;
-
-                font-family: 'Comic Sans MS';
+                font-family: 'Mountains of Christmas', cursive;
             }
 
             @keyframes snow {
@@ -52,7 +48,7 @@
 
                 font-size: 10px;
                 text-decoration: none;
-
+                font-family: 'Maitree', serif;
                 color: #FFFFFF;
             }
 
@@ -140,8 +136,17 @@
 
     </head>
 
-    <body>
-
+    <body id="body">
+        <script src="https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js"></script>
+        <script>
+            var sf = new Snowflakes({
+                color: "#ffffff",
+                speed: 1.0,
+                minOpacity: 0.2,
+                maxSize: 40,
+                autoResize: false
+            });
+        </script>
         <div class="main">
 
             <div class="wrapper">
