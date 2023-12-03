@@ -53,12 +53,12 @@ SecretSanta.prototype.generate = function () {
             var enforced = this.enforced[ name ];
 
             if ( this.names.indexOf( enforced ) === -1 )
-                throw new Error( name + ' is paired with ' + enforced + ', which hasn\'t been declared as a possible pairing' );
+                throw new Error( name + ' foi forçado a combinar com ' + enforced + ', no qual não existe na lista de nomes declarados' );
 
             Object.keys( pairings ).forEach( function ( name ) {
 
                 if ( pairings[ name ] === enforced ) {
-                    throw new Error( 'Per your rules, multiple persons are paired with ' + enforced );
+                    throw new Error( 'De acordo com suas regras, multiplas pessoas foram combinadas com ' + enforced );
                 }
 
             } );
@@ -80,7 +80,7 @@ SecretSanta.prototype.generate = function () {
 
     var pickOutPairing = function (name) {
         if ( candidatePairings[ name ].length === 0 )
-            throw new Error('We haven\'t been able to find a match for ' + name + '! Press "Generate" to try again and, if it still doesn\'t work, try removing some exclusions from your rules. Sorry for the inconvenience!');
+            throw new Error('Não conseguimos sortear um par para ' + name + '! Pressione sortear novamente para recomeçar e se o erro persistir, revise suas regras de exclusão ou combinação');
 
         // Remove already picked candidate from the potential candidates
         var picked = this.picked;

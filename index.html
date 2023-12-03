@@ -154,41 +154,42 @@
 
             <div class="part" style="overflow-y: auto">
                 <div class="instructions">
-                    <h1><img src="assets/mistletoe.png" style="vertical-align: middle" /> Secret Santa Generator</h1>
-                    <p>No signup, no email, no bullshit. Just a straightforward <a
-                            href="https://github.com/rmsy/secretsanta">open-source</a> tool to help you generate your secret santa pairings.
-                        One static page, and that's it.</p>
-                    <p>In the most common case (no exclusion rules, pair each guest with another at random), enter the name of your guests one line at a time. Once done, press "generate" and you're all set: send the generated links to your guests (by mail, chat, whatever floats your boat) and their pairing will be revealed to them (and only them) once they open the link.</p>
-                    <h2>Where does this tool come from?</h2>
-                    <p>I wanted to make a Secret Santa over Facebook without having to reveal to anyone my guests email addresses (so nothing that would require a backend). I also wanted not to know who was paired with me, so I had to find a way to somehow obfuscate the information. And being a developer, well, my first thought was "Let's AES it, for fun and profits!". Classic.</p>
+                    <h1><img src="assets/mistletoe.png" style="vertical-align: middle" /> Sorteador de amigo oculto!</h1>
+                    <p>Sem cadastro, sem fornecer e-mails ou qualquer outro dado pessoal! Ferramenta <a href="https://github.com/abelmferreira/secretsanta">open-source</a> para realizar o sorteio de final de ano!.</p>
+                    <p>Insira o nome dos seus convidados uma linha de cada vez. Uma vez feito isso, pressione "realziar sorteio" e está tudo pronto: envie os links gerados para seus amigos (por email, zap, ou que quer que seja) e o resultado será revelado a eles assim que abrirem o link.</p>
+                    <p>Permite incluir exclusões de pares ou até mesmo forçar um par.</p>
+                    <h2>Para que esta ferramenta?</h2>
+                    <p>Fazer sorteio de nomes sem ter que revelar a ninguém os endereços de e-mail ou telefones dos participantes.</p>
                 </div>
             </div>
 
             <form id="form" class="part">
                 <textarea id="input" class="input" autofocus></textarea>
-                <button type="submit" class="generate">Generate your pairings</button>
+                <button type="submit" class="generate">Realizar sorteio</button>
                 <div id="result" class="result none"></div>
             </form>
 
         </div>
 
         <script id="input-placeholder" type="text/placeholder">
-            # You can add a user by adding a line
-            Santa
+            # Adicione um nome por linha
+            Darth Vader
+            Luke Skywalker
+            Chewbacca
+            C3PO
 
-            # You can add some details if you want to, using parentheses after the name
-            Nicholas (the elf)
+            # Você pode adicionar alguma informação adicional entre parênteses
+            Leia Organa (A princesa)
 
-            # You can prevent someone from being paired with someone else
-            Maël !Aurélie
-            Aurélie !Maël
+            # Você pode previnir certas duplas utilizando !
+            Darth Vader !Luke Skywalker
 
-            # You can also exclude someone from being paired with multiple people
-            # Careful: too many exclusion rules can make your secret santa less interesting!
-            Rudolph !Santa !Nicholas (the elf)
+            # A exclusão pode ser de mais de um participante
+            # Atenção: Evite colocar muitas regras de exclusão pois aumenta as chances de falha do sorteio!
+            C3PO !Darth Vader !Chewbacca
 
-            # You can also cheat a bit and force someone to be paired with another
-            Nicholas (the saint) =Nicholas (the elf)
+            # Você ainda pode forçar um par para ser sempre sorteado
+            Leia Organa (A princesa) =Luke Skywalker
 
             ...
         </script>
@@ -258,7 +259,7 @@
             namesValidator = namesValidator.filter(function(e) { return e !== pairings[nextuser] })
         }
         
-        console.log('Candidate sequence: ', sequence);
+        // console.log('Candidate sequence: ', sequence);
         console.log('Its ok If array is empty, if not, the sequence is not perfect: ', namesValidator);
         return namesValidator.length;
       }
@@ -393,7 +394,7 @@
 
           var name = e.currentTarget.getAttribute( 'data-name' );
 
-          if ( ! confirm( 'If you click this link, you will be revealed ' + name + '\'s pairing! Are you sure you want to do this? Only do this if you\'re actually ' + name + '.\n\nUse right-click to copy the link target instead.' ) ) {
+          if ( ! confirm( 'Ao clicar neste link, o par de ' + name + ' será revelado! Tem certeza que deseja continuar? Para não estragar a brincadeira, apenas faça isso se você for ' + name + '.\n\n Utilize o botão direito do mouse no link para escolher a opção copiar link em vez de abri-lo.' ) ) {
               e.preventDefault();
           }
 
