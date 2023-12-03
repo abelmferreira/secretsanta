@@ -1,6 +1,8 @@
 # Secret Santa
 
-Check it live on [isaacmoore.me/secretsanta/](https://isaacmoore.me/secretsanta/).
+Check it live on [abelmferreira.github.io/secretsanta/](https://abelmferreira.github.io/secretsanta/).
+
+Forked from https://github.com/rmsy/secretsanta and from https://github.com/arcanis/secretsanta
 
 ## License (MIT)
 
