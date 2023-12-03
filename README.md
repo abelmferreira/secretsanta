@@ -1,3 +1,9 @@
+# Amigo Oculto
+
+Teste em [abelmferreira.github.io/secretsanta/](https://abelmferreira.github.io/secretsanta/).
+
+Clonado de https://github.com/rmsy/secretsanta and from https://github.com/arcanis/secretsanta
+
 # Secret Santa
 
 Check it live on [abelmferreira.github.io/secretsanta/](https://abelmferreira.github.io/secretsanta/).
